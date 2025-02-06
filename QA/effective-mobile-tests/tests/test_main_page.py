@@ -10,21 +10,15 @@ def main_page(page: Page):
 
 def test_navigate_to_about_us(main_page):
     main_page.navigate("https://effective-mobile.ru")
-    main_page.click_about_us()
-    assert main_page.get_current_url() == "https://effective-mobile.ru/#about"
 
+    if section == "about":
+        main_page.click_about_us()
+    elif section == "contacts":
+        main_page.click_contacts()
+    elif section == "specialists":
+        main_page.click_specialists()
 
-def test_navigate_to_contacts(main_page):
-    main_page.navigate("https://effective-mobile.ru")
-    main_page.click_contacts()
-    assert main_page.get_current_url() == "https://effective-mobile.ru/#contacts"
-
-
-def test_navigate_to_specialists(main_page):
-    main_page.navigate("https://effective-mobile.ru")
-    main_page.click_specialists()
-    assert main_page.get_current_url() == "https://effective-mobile.ru/#specialists"
-
+    assert main_page.get_current_url() == expected_url
 
 def test_navigate_to_main_page_via_logo(main_page):
     main_page.navigate("https://effective-mobile.ru/#about")
