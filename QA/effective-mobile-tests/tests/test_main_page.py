@@ -9,7 +9,7 @@ test_data = [
     ("specialists", "https://effective-mobile.ru/#specialists"),
 ]
 
-@fixture
+@pytest.fixture
 def main_page(page: Page):
     return MainPage(page)
 
