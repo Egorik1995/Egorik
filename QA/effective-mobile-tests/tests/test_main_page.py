@@ -2,6 +2,12 @@ from pytest import fixture
 from playwright.sync_api import Page
 from pages.main_page import MainPage
 
+# Параметризация для тестов
+test_data = [
+    ("about", "https://effective-mobile.ru/#about"),
+    ("contacts", "https://effective-mobile.ru/#contacts"),
+    ("specialists", "https://effective-mobile.ru/#specialists"),
+]
 
 @fixture
 def main_page(page: Page):
