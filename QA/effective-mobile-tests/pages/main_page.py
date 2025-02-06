@@ -5,10 +5,10 @@ from .locators import MainPageLocators
 class MainPage(BasePage):
     def __init__(self, page):
         super().__init__(page)
-        self.about_us_link = page.locator("a[href='#about']")
-        self.contacts_link = page.locator("a[href='#contacts']")
-        self.specialists_link = page.locator("a[href='#specialists']")
-        self.logo_link = page.locator("a.logo")
+        self.about_us_link = page.locator(MainPageLocators.ABOUT_US_LINK)
+        self.contacts_link = page.locator(MainPageLocators.CONTACTS_LINK)
+        self.specialists_link = page.locator(MainPageLocators.SPECIALISTS_LINK)
+        self.logo_link = page.locator(MainPageLocators.LOGO_LINK)
 
     def click_about_us(self):
         self.about_us_link.click()
