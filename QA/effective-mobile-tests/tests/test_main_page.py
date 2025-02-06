@@ -13,8 +13,8 @@ test_data = [
 def main_page(page: Page):
     return MainPage(page)
 
-
-def test_navigate_to_about_us(main_page):
+@pytest.mark.parametrize("section, expected_url", test_data)
+def test_navigate_to_section(main_page, section, expected_url):
     main_page.navigate("https://effective-mobile.ru")
 
     if section == "about":
